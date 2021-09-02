@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Favorite Quotes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" >
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light" style="margin-top:25px;">
+        <div class='container-fluid d-grid gap-2 d-md-flex justify-content-md-end' style="margin-top:25px;margin-right:115px">
+            <a class="btn btn-primary" href="{{ url_for('quotes') }}">Add a quote</a>
+        </div>
+    </nav>
+    <br>
+
+    <div class="container theme-showcase" role="main">
+
+      <div style="color:#fff; background-color:orange", class="jumbotron">
+        <h1 style="text-align: center;">Favorite Quotes</h1>
+      </div>
+      <!--for loop starts-->
+      {% for res in result %}
+      
+        <div style ="color:#fff;background-color:blue">
+            <h2 style="text-align: center;"> {{ res.author }}</h1>
+        </div>
+        <div style ="color:#fff;font-size:24px;background-color:green">
+            <p style="text-align: center;"> {{ res.quote }} </p>
+        </div>
+      <!-- for loop ends here..-->
+      {% endfor %}
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
