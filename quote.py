@@ -5,9 +5,9 @@ app =Flask(__name__)
 ENV = "dev"
 
 if ENV == 'dev':
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql+psycopg2://postgres:password@localhost/databasename'
+    app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql+psycopg2://superuser:password@localhost/databasename'
 else:
-    app.config["SQLALCHEMY_DATABASE_URI"] = "ADD URL HERE"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "ADD URL HERE"   #production url
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
